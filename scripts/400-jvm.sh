@@ -1,8 +1,7 @@
 #!/bin/bash
 
 echo "Installing Oracle JVM"
-if [ -f $JVM_FILE ];
-then
+if [[ -n "${JVM_FILE}"  ]] && [ -f $JVM_FILE ]; then
   mkdir /opt/lucee/jvm
   tar -xf $JVM_FILE -C /opt/lucee/jvm
   chown -R root:root /opt/lucee/jvm

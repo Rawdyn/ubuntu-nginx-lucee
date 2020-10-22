@@ -1,7 +1,7 @@
 #!/bin/bash
 
 jar_url="https://release.lucee.org/rest/update/provider/loader/$LUCEE_VERSION"
-if [[ $LUCEE_LIGHT ]];then
+if [[ -n "${LUCEE_LIGHT}"  ]]; then
     jar_url="https://release.lucee.org/rest/update/provider/light/$LUCEE_VERSION"
 fi
 jar_folder="lucee-$LUCEE_VERSION"
@@ -22,7 +22,7 @@ else
   exit 1
 fi
 
-if [[ $LUCEE_JAR_SHA256 ]];then
+if [[ -n "${LUCEE_JAR_SHA256}"  ]]; then
     echo "Verifying SHA-256 checksum"
     if [[ $(sha256sum "/opt/lucee/$jar_folder/lucee.jar") =~ "$LUCEE_JAR_SHA256" ]]; then
         echo "Verified lucee.jar SHA-256: $LUCEE_JAR_SHA256"

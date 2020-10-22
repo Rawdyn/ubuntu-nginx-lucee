@@ -1,65 +1,42 @@
 #!/bin/bash
 
-#configuration options
-if [[ !$LUCEE_VERSION ]];then
-    export LUCEE_VERSION="5.3.4.80"
-fi
-
-#if [[ $LUCEE_LIGHT ]];then
-    #export LUCEE_JAR_SHA256=""
-#fi
-
-if [[ !$JVM_MAX_HEAP_SIZE ]];then
-    export JVM_MAX_HEAP_SIZE="512m"
-fi
-
-#set JVM_FILE and JVM_VERSION if you want to use an oracle JVM, instead of openjdk
-if [[ !$JVM_FILE ]]; then
-    export JVM_FILE="server-jre-8u212-linux-x64.tar.gz"
-    export JVM_VERSION="1.8.0_212"
-fi
-
-
-
-#root permission check
-if [ "$(whoami)" != "root" ]; then
-  echo "Sorry, you need to run this script using sudo or as root."
-  exit 1
-fi
-
 function separator {
-  echo " "
-  echo "------------------------------------------------"
-  echo " "
+	echo -e "\e[97m\n============================================================\n\e[37m"
 }
 
-#make sure scripts are runnable
+#Check Environment Settings.
+#Includes confirm to proceed.
+#Must be run as a sourcing script (. ./) so the 'exit' releases the entire process.
+. ./pre-install-check.sh
+separator
+
+#Make sure scripts are runnable.
 chown -R root scripts/*.sh
 chmod u+x scripts/*.sh
 
-#update ubuntu software
+#Update ubuntu software.
 ./scripts/100-ubuntu-update.sh
 separator
 
-#download lucee
+#Download lucee
 ./scripts/200-lucee.sh
 separator
 
-#install tomcat
+#Install tomcat
 ./scripts/300-tomcat.sh
 separator
 
-#install jvm
+#Install jvm
 ./scripts/400-jvm.sh
 separator
 
-#install nginx
+#Install nginx
 ./scripts/500-nginx.sh
 separator
 
-#configure lucee
+#Configure lucee
 ./scripts/600-config.sh
 separator
 
-echo "Setup Complete"
+echo -e "\n\e[92mSetup Complete\e[0m\n\n"
 separator
