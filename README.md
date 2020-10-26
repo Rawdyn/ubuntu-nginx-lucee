@@ -35,7 +35,7 @@ How do I run it?
 3. **Optional: Download Specific JVM** - Historically, the Oracle JVM is used to run CFML applications. The current default is to use the open source OpenJDK (which the Oracle JVM is based on). The advantage of using OpenJDK is that you can also keep it up to date using `apt-get`. The advantage of the Oracle JVM is that it includes a few Java classes that might be used for image processing (eg the com.sun classes). If you download a JVM from Oracle make sure the JVM you downloaded is located in the folder that contains install.sh, eg `/root/Rawdyn-ubuntu-nginx-lucee-abcdefg/`. If you skip this step OpenJDK is used instead.
 4. **Configuration** - You _can_ either Edit the `install.sh` and change any configuration options such as the Lucee Version or JVM version - or the recommended method is to use environment variables (see below).
 5. **Run install.sh** - make sure you are root or sudo and run `./install.sh` you may need to `chmod u+x install.sh` to give execute permissions to the script. 
-![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) Running install will provide a check of variables set and confirm to proceed or exit.
+:white_check_mark: Running **./install** will provide a check of environment variables set and confirm to proceed or exit.
 
 
 Limitations / Known Issues
