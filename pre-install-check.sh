@@ -29,6 +29,10 @@ echo -e "\e[37mJVM Max Heap Size will be set to \e[92m$JVM_MAX_HEAP_SIZE\e[0m"
 if [[ -n "${JVM_FILE}"  ]] ; then
 	if [ -f $JVM_FILE ]; then
 		echo -e "\e[37mJVM File '\e[92m$JVM_FILE\e[37m' found.\e[0m"
+		echo -e "\e[37mJVM Version '\e[92m$JVM_VERSION\e[91m' CHECK THIS MATCHES FILE.\e[0m"
+		#e.g. (see: https://adoptopenjdk.net/archive.html)
+		#JVM_FILE="OpenJDK11U-jre_x64_linux_hotspot_11.0.6_10.tar.gz"
+    	#JVM_VERSION="11.0.6_10"
 	else
 		echo -e "\e[91mExpected JVM File '$JVM_FILE' not found.\e[0m"
 		echo -e "\e[37mSKIPPING Oracle JVM Installation.\e[0m"
