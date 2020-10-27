@@ -34,7 +34,6 @@ How do I run it?
 
     :white_check_mark: Running **./install** will display a summary of environment variables set and a confirm prompt to proceed or exit.
 
-
 Limitations / Known Issues
 --------------------------
 
@@ -61,21 +60,28 @@ Variable | Default/Example | Description
 Example Installation
 --------------------
 SSH into Ubuntu...  
-Switch to root account  
-`$ sudo -i`
+Switch to root account
 
-Download this package  
-`# curl -Lo /root/ubuntu-nginx-lucee.tar.gz https://api.github.com/repos/Rawdyn/ubuntu-nginx-lucee/tarball/master`
+	$ sudo -i
 
-Extract the package.  
-`# tar -xzvf /root/ubuntu-nginx-lucee.tar.gz`
+Download this package
 
-relocate into the extracted package (note randomised string suffix will vary).  
-`# cd root/Rawdyn-ubuntu-nginx-lucee-abcdefg`
+	# curl -Lo /root/ubuntu-nginx-lucee.tar.gz https://api.github.com/repos/Rawdyn/ubuntu-nginx-lucee/tarball/master
+
+Extract the package.
+
+	# tar -xzvf /root/ubuntu-nginx-lucee.tar.gz
+
+Relocate into the extracted package (note randomised string suffix will vary).
+
+	# cd root/Rawdyn-ubuntu-nginx-lucee-abcdefg
 
 Set any options desired and call the install script.  
-`# ADMIN_PASSWORD=qwe783L1cH WHITELIST_IP=192.168.3.45 ./install.sh`
 
+	# ADMIN_PASSWORD=qwe783L1cH WHITELIST_IP=192.168.3.45 ./install.sh
+
+Check the options are set as you desire and continue, otherwise exit.  
+![Install Confirm Prompt](https://github.com/Rawdyn/ubuntu-nginx-lucee/blob/media/ubuntu-nginx-lucee-install-confirm-input.PNG)  
 
 Setting up a Virtual Host
 -------------------------
@@ -119,5 +125,5 @@ After making changes you need to restart or reload nginx:
 For more information on configuring nginx see the [nginx Wiki](http://wiki.nginx.org/Configuration)
 
 
-Thanks go to [Foundeo](https://foundeo.com/) for the [origin of this fork](https://github.com/foundeo/ubuntu-nginx-lucee).
-Thanks go to [Booking Boss](http://www.bookingboss.com/) for funding the initial work by Foundeo.
+Thanks go to [Foundeo](https://foundeo.com/) for the [origin of this fork](https://github.com/foundeo/ubuntu-nginx-lucee).  
+Thanks go to [Booking Boss](http://www.bookingboss.com/) for funding the initial work by Foundeo.  
