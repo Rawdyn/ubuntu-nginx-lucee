@@ -65,23 +65,23 @@ Example Installation
 SSH into Ubuntu...  
 Switch to root account
 
-	$ sudo -i
+	sudo -i
 
 Download this package
 
-	# curl -Lo /root/ubuntu-nginx-lucee.tar.gz https://api.github.com/repos/Rawdyn/ubuntu-nginx-lucee/tarball/master
+	curl -Lo /root/ubuntu-nginx-lucee.tar.gz https://api.github.com/repos/Rawdyn/ubuntu-nginx-lucee/tarball/master
 
 Extract the package.
 
-	# tar -xzvf /root/ubuntu-nginx-lucee.tar.gz
+	tar -xzvf /root/ubuntu-nginx-lucee.tar.gz
 
 Relocate into the extracted package (note randomised string suffix will vary).
 
-	# cd root/Rawdyn-ubuntu-nginx-lucee-abcdefg
+	cd root/Rawdyn-ubuntu-nginx-lucee-abcdefg
 
 Set any options desired and call the install script.  
 
-	# ADMIN_PASSWORD=qwe783L1cH WHITELIST_IP=192.168.3.45 ./install.sh
+	ADMIN_PASSWORD=qwe783L1cH WHITELIST_IP=192.168.3.45 ./install.sh
 
 Check the options are set as you desire and continue, otherwise exit.  
 ![Install Confirm Prompt](https://github.com/Rawdyn/ubuntu-nginx-lucee/blob/media/ubuntu-nginx-lucee-install-confirm-input.PNG)  
