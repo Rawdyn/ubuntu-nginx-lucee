@@ -47,15 +47,35 @@ Environment Variables
 --------------------------
 
 The script can be configured with the following environment variables:
+
 Variable | Default/Example | Description
--|-------------------------------------------------|-
+-|--------------------------------------------------------------|-
 `LUCEE_VERSION` | `5.3.6.61` (default) | Sets the version of Lucee that it will attempt to install.
 `JVM_MAX_HEAP_SIZE` | `512m` (default) | Sets the amount of memory that java/tomcat can use.
 `ADMIN_PASSWORD` |  | Sets the Lucee server context password and default web context password. If not defined, a random password is generated and set.
-`JVM_FILE` | `OpenJDK11-jre_x64_linux_hotspot_11.0.6_10.tar.gz` | Name of a JRE file. If not found, OpenJDK will be installed instead.
-`JVM_VERSION` | `11.0.6_10` | the version string corresponding to the JVM_FILE. Used to name install directory.
+`JVM_FILE` | `OpenJDK11_jre_x64_linux_hotspot_11.0.6_10.tar.gz` | Name of a JRE file. If not found, OpenJDK will be installed instead.
+`JVM_VERSION` | `11.0.6_10` | The version string corresponding to the JVM_FILE. Used to name install directory.
 `WHITELIST_IP` | `199.241.3.18` | If specified, this IP will be whitelisted to allow access to /lucee/
-`LUCEE_JAR_SHA256` |  | if specified, checks the sha256sum of the the downloaded lucee.jar
+`LUCEE_JAR_SHA256` |  | If specified, checks the sha256sum of the the downloaded lucee.jar
+
+Example Installation
+--------------------
+SSH into Ubuntu...  
+Switch to root account  
+`$ sudo -i`
+
+Download this package  
+`# curl -Lo /root/ubuntu-nginx-lucee.tar.gz https://api.github.com/repos/Rawdyn/ubuntu-nginx-lucee/tarball/master`
+
+Extract the package.  
+`# tar -xzvf /root/ubuntu-nginx-lucee.tar.gz`
+
+relocate into the extracted package (note randomised string suffix will vary).  
+`# cd root/Rawdyn-ubuntu-nginx-lucee-abcdefg`
+
+Set any options desired and call the install script.  
+`# ADMIN_PASSWORD=qwe783L1cH WHITELIST_IP=192.168.3.45 ./install.sh`
+
 
 Setting up a Virtual Host
 -------------------------
