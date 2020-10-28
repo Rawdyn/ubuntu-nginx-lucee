@@ -29,9 +29,9 @@ Take a look in the `scripts/` subfolder to see the script for each step.
 How do I run it?
 ----------------
 
-1. **Downlaod this repository** - `curl -Lo /root/ubuntu-nginx-lucee.tar.gz https://api.github.com/repos/Rawdyn/ubuntu-nginx-lucee/tarball/master`
+1. **Downlaod this repository** - `curl -Lo /root/ubuntu-nginx-lucee.tar.gz https://api.github.com/repos/rawdyn/ubuntu-nginx-lucee/tarball/master`
 2. **Extract repository** - `tar -xzvf /root/ubuntu-nginx-lucee.tar.gz`
-3. **Optional: Download Specific JVM** - Historically, the Oracle JVM is used to run CFML applications. The current default is to use the open source OpenJDK (which the Oracle JVM is based on). The advantage of using OpenJDK is that you can also keep it up to date using `apt-get`. The advantage of the Oracle JVM is that it includes a few Java classes that might be used for image processing (eg the com.sun classes). If you download a JVM from Oracle make sure the JVM you downloaded is located in the folder that contains install.sh, eg `/root/Rawdyn-ubuntu-nginx-lucee-abcdefg/`. If you skip this step OpenJDK is used instead.
+3. **Optional: Download Specific JVM** - Historically, the Oracle JVM is used to run CFML applications. The current default is to use the open source OpenJDK (which the Oracle JVM is based on). The advantage of using OpenJDK is that you can also keep it up to date using `apt-get`. The advantage of the Oracle JVM is that it includes a few Java classes that might be used for image processing (eg the com.sun classes). If you download a JVM from Oracle make sure the JVM you downloaded is located in the folder that contains install.sh, eg `/root/rawdyn-ubuntu-nginx-lucee-abcdefg/`. If you skip this step, OpenJDK is used instead.
 4. **Configuration** - You _can_ Edit the `pre-install-check.sh` and change any configuration options such as the Lucee Version or JVM version - or the recommended method is to use environment variables (see below).
 5. **Run install.sh** - make sure you are root or sudo and run `./install.sh` you may need to `chmod u+x install.sh` to give execute permissions to the script.
 
@@ -69,7 +69,7 @@ Switch to root account
 
 Download this package
 
-	curl -Lo /root/ubuntu-nginx-lucee.tar.gz https://api.github.com/repos/Rawdyn/ubuntu-nginx-lucee/tarball/master
+	curl -Lo /root/ubuntu-nginx-lucee.tar.gz https://api.github.com/repos/rawdyn/ubuntu-nginx-lucee/tarball/master
 
 Extract the package.
 
@@ -77,14 +77,20 @@ Extract the package.
 
 Relocate into the extracted package (note randomised string suffix will vary).
 
-	cd root/Rawdyn-ubuntu-nginx-lucee-abcdefg
+	cd root/rawdyn-ubuntu-nginx-lucee-abcdefg
 
 Set any options desired and call the install script.  
 
 	ADMIN_PASSWORD=qwe783L1cH WHITELIST_IP=192.168.3.45 ./install.sh
 
 Check the options are set as you desire and continue, otherwise exit.  
-![Install Confirm Prompt](https://github.com/Rawdyn/ubuntu-nginx-lucee/blob/media/ubuntu-nginx-lucee-install-confirm-input-V02.PNG)  
+![Install Confirm Prompt](https://github.com/rawdyn/ubuntu-nginx-lucee/blob/media/ubuntu-nginx-lucee-install-confirm-input-V02.PNG)  
+
+The example belows shows warnings for a requested custom JVM that could not be found.  
+![Install Confirm Prompt](https://github.com/rawdyn/ubuntu-nginx-lucee/blob/media/ubuntu-nginx-lucee-install-confirm-input-with-alert-V01.PNG)  
+
+
+
 
 Setting up a Virtual Host
 -------------------------
