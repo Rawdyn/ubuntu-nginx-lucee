@@ -4,7 +4,7 @@
 ubuntu-nginx-lucee
 ==================
 
-A set of bash scripts for standing up a Lucee server using nginx and Tomcat on Ubuntu.
+A set of bash scripts for standing up a Lucee server using nginx and Tomcat on Ubuntu.  
 Uses the Tomcat from the Ubuntu distribution so you can update Tomcat using `apt-get update tomcat8`
 
 Why would I use this instead of the offical Lucee installers?
@@ -84,7 +84,7 @@ Set any options desired and call the install script.
 	ADMIN_PASSWORD=qwe783L1cH WHITELIST_IP=192.168.3.45 ./install.sh
 
 Check the options are set as you desire and continue, otherwise exit.  
-![Install Confirm Prompt](https://github.com/Rawdyn/ubuntu-nginx-lucee/blob/media/ubuntu-nginx-lucee-install-confirm-input.PNG)  
+![Install Confirm Prompt](https://github.com/Rawdyn/ubuntu-nginx-lucee/blob/media/ubuntu-nginx-lucee-install-confirm-input-V02.PNG)  
 
 Setting up a Virtual Host
 -------------------------
