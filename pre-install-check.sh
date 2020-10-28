@@ -7,6 +7,8 @@ blu="\e[38;5;38m"
 grn="\e[38;5;118m"
 ylw="\e[38;5;185m"
 rst="\e[0m"
+fv_error=false
+
 # If no Lucee version specified, set default.
 if [[ -z "${LUCEE_VERSION}"  ]]; then
 	export LUCEE_VERSION="5.3.6.61"
@@ -46,7 +48,6 @@ fi
 #if EITHER JVM file or version specified
 if [[ -n "${JVM_FILE}"  ]] || [[ -n "${JVM_VERSION}"  ]] ; then
 	#if JVM_FILE requested
-	fv_error=false
 	f_msg="Requested custom JVM File...\n${blu}   $JVM_FILE${gry}\n   The custom JVM file was"
 	if [[ -n "${JVM_FILE}"  ]]; then
 		#if JFM_FILE exists
