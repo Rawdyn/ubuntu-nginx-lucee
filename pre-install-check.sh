@@ -69,7 +69,7 @@ if [[ -n "${JVM_FILE}"  ]] || [[ -n "${JVM_VERSION}"  ]] ; then
 		fi
 	fi
 	if [[ "$fv_error" == false ]]; then
-		echo -e "   \e[38;5;118mOK${gry} to use custom JVM file and version specified.${rst}"
+		echo -e "   ${grn}OK${gry} to use custom JVM file and version specified.${rst}"
 	else
 		echo -e "   ${red}ALERT!${gry} Could not resolve custom JVM file and version.${rst}"
 		echo -e "   ${red}ALERT!${gry} Default OpenJDK will be used if you proceed.${rst}"

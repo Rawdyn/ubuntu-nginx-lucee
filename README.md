@@ -63,29 +63,25 @@ Variable | Default/Example | Description
 Example Installation
 --------------------
 SSH into Ubuntu...  
-Switch to root account
+```Shell
+#Switch to root account
+sudo -i
 
-	sudo -i
+#Download this package
+curl -Lo /root/ubuntu-nginx-lucee.tar.gz https://api.github.com/repos/rawdyn/ubuntu-nginx-lucee/tarball/master
 
-Download this package
+#Extract the package.
+tar -xzvf /root/ubuntu-nginx-lucee.tar.gz
 
-	curl -Lo /root/ubuntu-nginx-lucee.tar.gz https://api.github.com/repos/rawdyn/ubuntu-nginx-lucee/tarball/master
+#Relocate into the extracted package (note randomised string suffix will vary).
+cd root/rawdyn-ubuntu-nginx-lucee-abcdefg
 
-Extract the package.
-
-	tar -xzvf /root/ubuntu-nginx-lucee.tar.gz
-
-Relocate into the extracted package (note randomised string suffix will vary).
-
-	cd root/rawdyn-ubuntu-nginx-lucee-abcdefg
-
-Grant permissions to run the install file.
-
-	chmod u+x install.sh
+#Grant permissions to run the install file.
+chmod u+x install.sh
 	
-Set any options desired and call the install script.  
-
-	ADMIN_PASSWORD=qwe783L1cH WHITELIST_IP=192.168.3.45 ./install.sh
+#Set any options desired and call the install script.  
+ADMIN_PASSWORD=qwe783L1cH WHITELIST_IP=192.168.3.45 ./install.sh
+```  
 
 Check the options are set as you desire and continue, otherwise exit.  
 ![Install Confirm Prompt](https://github.com/rawdyn/ubuntu-nginx-lucee/blob/media/ubuntu-nginx-lucee-install-confirm-input-V02.PNG)  
