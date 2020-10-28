@@ -79,6 +79,10 @@ Relocate into the extracted package (note randomised string suffix will vary).
 
 	cd root/rawdyn-ubuntu-nginx-lucee-abcdefg
 
+Grant permissions to run the install file.
+
+	chmod u+x install.sh
+	
 Set any options desired and call the install script.  
 
 	ADMIN_PASSWORD=qwe783L1cH WHITELIST_IP=192.168.3.45 ./install.sh
