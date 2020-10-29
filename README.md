@@ -58,7 +58,7 @@ Variable | Default/Example | Description
 `JVM_MAX_HEAP_SIZE` | `512m` (default) | Sets the amount of memory that java/tomcat can use.
 `ADMIN_PASSWORD` |  | Sets the Lucee server context password and default web context password. If not defined, a random password is generated and set.
 `JVM_FILE` | `OpenJDK11_jre_x64_linux_hotspot_11.0.6_10.tar.gz` | Name of a JRE file. If not found, OpenJDK will be installed instead.
-`JVM_VERSION` | `-11.0.6+10-jre` | The version string corresponding to the JVM_FILE. Used to name install directory.<br />:imp: CAREFUL. The tar process can create a directory that might differ from the .gz file name. In the example, the verion string we would use is `-11.0.6+10-jre`. 
+`JVM_VERSION` | `-11.0.6+10-jre` | The version string corresponding to the JVM_FILE. Used to name install directory.<br />:imp: CAREFUL. The tar process can create a directory that might differ from the .gz file name. In the example, the version string we would use is `-11.0.6+10-jre`. This gets appended to `jdk` so the symlink for 'current` will be correctly targeted.
 `WHITELIST_IP` | `199.241.3.18` | If specified, this IP will be whitelisted to allow access to /lucee/
 `LUCEE_JAR_SHA256` |  | If specified, checks the sha256sum of the the downloaded lucee.jar
   
