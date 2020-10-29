@@ -134,6 +134,14 @@ After making changes you need to restart or reload nginx:
 	sudo service nginx restart
 
 For more information on configuring nginx see the [nginx Wiki](http://wiki.nginx.org/Configuration)
+  
+
+Resources
+---------
+
+- [Open JDK JVM archives](https://adoptopenjdk.net/archive.html)
+- [Adobe downloads including JVMs](https://www.adobe.com/support/coldfusion/downloads.html)
+
 
 
 Thanks go to [Foundeo](https://foundeo.com/) for the [origin of this fork](https://github.com/foundeo/ubuntu-nginx-lucee).  
