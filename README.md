@@ -52,16 +52,15 @@ Environment Variables
 
 The script can be configured with the following environment variables:
 
-Variable | Description
----|---
-**LUCEE_VERSION**<br />_default_<br />`5.3.6.61` | Sets the version of Lucee that it will attempt to install.
-**JVM_MAX_HEAP_SIZE**<br />_default_<br />`512m` | Sets the amount of memory that java/tomcat can use.
-**ADMIN_PASSWORD**<br /> <br /> | Sets the Lucee server context password and default web context password. If not defined, a random password is generated and set.
-**JVM_FILE**<br />_example_<br />`OpenJDK11_jre_x64_linux_hotspot_11.0.6_10.tar.gz` | Name of a JRE file. If not found, OpenJDK will be installed instead.
-**JVM_VERSION**<br />_example_<br />`11.0.6_10` | The version string corresponding to the JVM_FILE. Used to name install directory.
-**WHITELIST_IP**<br />_example_<br />`199.241.3.18` | If specified, this IP will be whitelisted to allow access to /lucee/
-**LUCEE_JAR_SHA256**<br /> <br /> | If specified, checks the sha256sum of the the downloaded lucee.jar
-
+Variable | Default/Example | Description
+---|--------------------------------------------------------------|---
+`LUCEE_VERSION` | `5.3.6.61` (default) | Sets the version of Lucee that it will attempt to install.
+`JVM_MAX_HEAP_SIZE` | `512m` (default) | Sets the amount of memory that java/tomcat can use.
+`ADMIN_PASSWORD` |  | Sets the Lucee server context password and default web context password. If not defined, a random password is generated and set.
+`JVM_FILE` | `OpenJDK11_jre_x64_linux_hotspot_11.0.6_10.tar.gz` | Name of a JRE file. If not found, OpenJDK will be installed instead.
+`JVM_VERSION` | `11.0.6_10` | The version string corresponding to the JVM_FILE. Used to name install directory.
+`WHITELIST_IP` | `199.241.3.18` | If specified, this IP will be whitelisted to allow access to /lucee/
+`LUCEE_JAR_SHA256` |  | If specified, checks the sha256sum of the the downloaded lucee.jar
 Example Installation
 --------------------
 SSH into Ubuntu...  
