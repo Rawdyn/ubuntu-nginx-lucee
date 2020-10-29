@@ -61,6 +61,8 @@ Variable | Default/Example | Description
 `JVM_VERSION` | `11.0.6_10` | The version string corresponding to the JVM_FILE. Used to name install directory.
 `WHITELIST_IP` | `199.241.3.18` | If specified, this IP will be whitelisted to allow access to /lucee/
 `LUCEE_JAR_SHA256` |  | If specified, checks the sha256sum of the the downloaded lucee.jar
+  
+
 Example Installation
 --------------------
 SSH into Ubuntu...  
