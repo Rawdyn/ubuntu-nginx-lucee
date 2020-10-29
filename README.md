@@ -145,6 +145,7 @@ Resources
 
 - [Open JDK JVM archives](https://adoptopenjdk.net/archive.html)
 - [Adobe downloads including JVMs](https://www.adobe.com/support/coldfusion/downloads.html)
+- [Install mod_cfml to NGINX (any OS)](http://viviotech.github.io/mod_cfml/install-nginx.html)
 
 
 
