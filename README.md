@@ -52,8 +52,8 @@ Environment Variables
 
 The script can be configured with the following environment variables:
 
-Variable | Default/Example | Description
--|--------------------------------------------------------------|-
+Variable | Description
+-|-
 `LUCEE_VERSION`<br />default<br />`5.3.6.61` | Sets the version of Lucee that it will attempt to install.
 `JVM_MAX_HEAP_SIZE`<br />default<br />`512m` | Sets the amount of memory that java/tomcat can use.
 `ADMIN_PASSWORD` | Sets the Lucee server context password and default web context password. If not defined, a random password is generated and set.
