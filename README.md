@@ -20,11 +20,21 @@ What does it do?
 1. **Updates Ubuntu** - simply runs `apt-get update` and `apt-get upgrade`
 2. **Downloads Lucee** - uses curl to download lucee jars from BitBucket. Places the jars in `/opt/lucee/current/`
 3. **Installs & Configures Tomcat 8** - runs `apt-get install tomcat8` updates the `web.xml` `server.xml` and `catalina.properties` to configure Lucee servlets and mod_cfml Valve.  (Tomcat/Lucee run on port 8080 by default).
-4. **Installs Specific JVM** - if you downloaded a JRE and specified its version and name in the config (see Environment Variables), it will extract it under `/opt/lucee/jvm/$JVM_VERSION` and then create a symbolic link `/opt/lucee/jvm/current` to denote the current jvm version to use. It also edits tomcat config to point to this jvm. The default is to use OpenJDK when JVM_FILE or JVM_VERSION are not specified.
+4. **Installs Specific JVM** - if you downloaded a JRE and specified its version and name in the config (see **Environment Variables**), it will extract it under `/opt/lucee/jvm/$JVM_VERSION` and then create a symbolic link `/opt/lucee/jvm/current` to denote the current jvm version to use. It also edits tomcat config to point to this jvm. The default is to use OpenJDK when JVM_FILE or JVM_VERSION are not specified.
 5. **Installs & Configures nginx** - runs `apt-get install nginx` to install nginx. Creates a web root directory. Creates a `lucee.config` file so you can just `include lucee.config` for any site that uses CFML
 6. **Set Default Lucee Admin Password** - uses cfconfig to set the Lucee server context password and default web context password. If ADMIN_PASSWORD exists that is used, otherwise a random password is set.
 
 Take a look in the `scripts/` subfolder to see the script for each step.
+
+
+Limitations / Known Issues
+--------------------------
+
+* The servlet definitions and mappings (located in `/etc/tomcat8/web.xml`) are slimmed down, so if you need things like REST web services, see the [Configuration: Lucee web.xml](https://docs.lucee.org/guides/Various/configuration-web-xml.html#webxml)
+* The `/lucee/` uri is blocked in `/etc/nginx/lucee.conf`. You must add in your ip address and restart nginx. This can be done during install by setting `WHITELIST_IP`. See **Environment Variables**.
+* There is no uninstall option
+* This version of the script has been tested on **Ubuntu 18.04.5 LTS**.
+
 
 How do I run it?
 ----------------
@@ -32,18 +42,10 @@ How do I run it?
 1. **Downlaod this repository** - `curl -Lo /root/ubuntu-nginx-lucee.tar.gz https://api.github.com/repos/rawdyn/ubuntu-nginx-lucee/tarball/master`
 2. **Extract repository** - `tar -xzvf /root/ubuntu-nginx-lucee.tar.gz`
 3. **Optional: Download Specific JVM** - Historically, the Oracle JVM is used to run CFML applications. The current default is to use the open source OpenJDK (which the Oracle JVM is based on). The advantage of using OpenJDK is that you can also keep it up to date using `apt-get`. The advantage of the Oracle JVM is that it includes a few Java classes that might be used for image processing (eg the com.sun classes). If you download a JVM from Oracle make sure the JVM you downloaded is located in the folder that contains install.sh, eg `/root/rawdyn-ubuntu-nginx-lucee-abcdefg/`. If you skip this step, OpenJDK is used instead.
-4. **Configuration** - You _can_ Edit the `pre-install-check.sh` and change any configuration options such as the Lucee Version or JVM version - or the recommended method is to use environment variables (see below).
+4. **Configuration** - the recommended method is to use **Environment Variables** (see below) but you _can_ Edit the `pre-install-check.sh` and change any configuration options if you wish.
 5. **Run install.sh** - make sure you are root or sudo and run `./install.sh` you may need to `chmod u+x install.sh` to give execute permissions to the script.
 
-    :white_check_mark: Running **./install** will display a summary of environment variables set and a confirm prompt to proceed or exit.
-
-Limitations / Known Issues
---------------------------
-
-* The servlet definitions and mappings (located in `/etc/tomcat8/web.xml`) are slimmed down, so if you need things like REST web services, see the [Configuration: Lucee web.xml](https://docs.lucee.org/guides/Various/configuration-web-xml.html#webxml)
-* The `/lucee/` uri is blocked in `/etc/nginx/lucee.conf`. You must add in your ip address and restart nginx. This can be done during install by setting WHITELIST_IP. See Environment Variables.
-* There is no uninstall option
-* This version of the script has been tested on **Ubuntu 18.04. 5 LTS**.
+    :white_check_mark: Running **./install** will display a summary of **Environment Variables** set and a confirm prompt to proceed or exit.
 
 Environment Variables
 --------------------------
@@ -73,8 +75,8 @@ curl -Lo /root/ubuntu-nginx-lucee.tar.gz https://api.github.com/repos/rawdyn/ubu
 #Extract the package.
 tar -xzvf /root/ubuntu-nginx-lucee.tar.gz
 
-#Relocate into the extracted package (note randomised string suffix will vary).
-cd root/rawdyn-ubuntu-nginx-lucee-abcdefg
+#Relocate into the extracted package (note: randomised string suffix will vary).
+cd /root/rawdyn-ubuntu-nginx-lucee-abcdefg
 
 #Grant permissions to run the install file.
 chmod u+x install.sh
@@ -87,7 +89,7 @@ Check the options are set as you desire and continue, otherwise exit.
 ![Install Confirm Prompt](https://github.com/rawdyn/ubuntu-nginx-lucee/blob/media/ubuntu-nginx-lucee-install-confirm-input-V02.PNG)  
 
 The example belows shows warnings for a requested custom JVM that could not be found.  
-![Install Confirm Prompt](https://github.com/rawdyn/ubuntu-nginx-lucee/blob/media/ubuntu-nginx-lucee-install-confirm-input-with-alert-V01.PNG)  
+![Install Alert Confirm Prompt](https://github.com/rawdyn/ubuntu-nginx-lucee/blob/media/ubuntu-nginx-lucee-install-confirm-input-with-alert-V01.PNG)  
 
 
 
