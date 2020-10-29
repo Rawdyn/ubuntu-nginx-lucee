@@ -89,6 +89,9 @@ ADMIN_PASSWORD=qwe783L1cH WHITELIST_IP=192.168.3.45 ./install.sh
 Check the options are set as you desire and continue, otherwise exit.  
 ![Install Confirm Prompt](https://github.com/rawdyn/ubuntu-nginx-lucee/blob/media/ubuntu-nginx-lucee-install-confirm-input-V02.PNG)  
 
+The example belows shows successful checks for Custom JVM file setup where the file has been found.  
+![Install Custom JVM Confirm Prompt](https://github.com/rawdyn/ubuntu-nginx-lucee/blob/media/ubuntu-nginx-lucee-install-confirm-input-with-JVM-file-OK-V01.PNG)  
+
 The example belows shows warnings for a requested custom JVM that could not be found.  
 ![Install Alert Confirm Prompt](https://github.com/rawdyn/ubuntu-nginx-lucee/blob/media/ubuntu-nginx-lucee-install-confirm-input-with-alert-V01.PNG)  
 
