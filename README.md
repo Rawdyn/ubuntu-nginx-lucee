@@ -45,7 +45,7 @@ How do I run it?
 4. **Configuration** - the recommended method is to use **Environment Variables** (see below) but you _can_ Edit the `pre-install-check.sh` and change any configuration options if you wish.
 5. **Run install.sh** - make sure you are root or sudo and run `./install.sh` you may need to `chmod u+x install.sh` to give execute permissions to the script.
 
-    :white_check_mark: Running **./install** will display a summary of **Environment Variables** set and a confirm prompt to proceed or exit.
+    :green_apple: Running **./install** will display a summary of **Environment Variables** set and a confirm prompt to proceed or exit.
 
 Environment Variables
 --------------------------
