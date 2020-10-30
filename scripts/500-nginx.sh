@@ -40,6 +40,8 @@ echo "Removing nginx default site"
 rm /etc/nginx/sites-enabled/default
 echo "Adding our default site"
 ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/default.conf
+echo "Adding our example site"
+ln -s /etc/nginx/sites-available/example.com.conf /etc/nginx/sites-enabled/example.com.conf
 
 if [[ -n "${WHITELIST_IP}"  ]]; then
     echo "Granting $WHITELIST_IP access to /lucee"
