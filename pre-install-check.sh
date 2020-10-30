@@ -62,7 +62,7 @@ if [[ -n "${JVM_FILE}"  ]] || [[ -n "${JVM_VERSION}"  ]] ; then
 	#if JVM_VERSION specified
 	if [[ "$fv_error" == false ]]; then
 		if [[ -n "${JVM_VERSION}"  ]]; then	
-			echo -e "   ${gry}JVM Version '${blu}$JVM_VERSION${gry}'${ylw} CHECK${gry} it corresponds with file.${rst}"
+			echo -e "   ${gry}JVM Version '${blu}$JVM_VERSION${gry}'${rst}"
 		else
 			echo -e "   ${red}ALERT! ${gry}Expected JVM Version not set.${rst}"
 			fv_error=true
