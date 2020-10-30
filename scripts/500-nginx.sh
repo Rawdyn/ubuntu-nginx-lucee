@@ -19,9 +19,11 @@ mkdir $web_root/default/wwwroot
 mkdir $web_root/example.com
 mkdir $web_root/example.com/wwwroot
 
-echo "Creating a default index.html"
-echo "<!doctype html><html><body><h1>Hello</h1></body></html>" > $web_root/default/wwwroot/index.html
+echo "Creating a default 'heartbeat' index.html"
+echo "ok" > $web_root/default/wwwroot/index.html
 
+echo "Creating an example ColdFusion index.cfm"
+echo "<cfscript>writeOutput(getTickCount()); writeDump(var=cgi, expand=false); writeDump(request);</cfscript>" > $web_root/example.com/wwwroot/index.cfm
 
 
 #add tomcat8 to www-data group so it can read files
