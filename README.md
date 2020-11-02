@@ -82,8 +82,13 @@ cd /root/rawdyn-ubuntu-nginx-lucee-abcdefg
 #Grant permissions to run the install file.
 chmod u+x install.sh
 	
-#Set any options desired and call the install script.  
-ADMIN_PASSWORD=qwe783L1cH WHITELIST_IP=192.168.3.45 ./install.sh
+#Set any options desired and call the install script. 
+LUCEE_VERSION=5.3.7.47 \
+	WHITELIST_IP=172.17.194.225 \
+	ADMIN_PASSWORD=qwerty8007 \
+	JVM_FILE=OpenJDK11U-jre_x64_linux_hotspot_11.0.6_10.tar.gz \
+	JVM_VERSION=jdk-11-0-6_10 \
+	./install.sh
 ```  
 
 Check the options are set as you desire and continue, otherwise exit.  
